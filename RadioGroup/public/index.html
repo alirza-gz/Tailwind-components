@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./build/tailwind.css" />
+    <title>Radio Group</title>
+  </head>
+  <body class="flex justify-center items-center h-screen bg-sky-400">
+    <div
+      x-data="{
+        radio : 'one' , 
+        activeClass : 'bg-sky-700/90 text-white text-blue-500'
+      }"
+      class="flex flex-col gap-y-4 max-w-md w-full"
+    >
+      <button
+        @click="radio = 'one'"
+        :class="radio === 'one' ? activeClass : '' "
+        class="bg-white rounded-xl p-4 cursor-pointer flex justify-between items-center shadow-lg focus:ring-4 focus:ring-sky-200"
+      >
+        <div>
+          <p class="mb-2 font-bold text-lg text-start">Startup</p>
+          <span>12GB/6 CPUs · 160 GB SSD disk</span>
+        </div>
+        <div
+          x-show="radio === 'one'"
+          class="bg-sky-300/40 text-white rounded-full w-8 h-8 flex items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+        </div>
+      </button>
+      <button
+        @click="radio = 'two'"
+        :class="radio === 'two' ? activeClass : ''"
+        class="bg-white rounded-xl p-4 cursor-pointer flex justify-between items-center shadow-lg focus:ring-4 focus:ring-sky-200"
+      >
+        <div>
+          <p class="mb-2 font-bold text-lg text-start">Startup</p>
+          <span>12GB/6 CPUs · 160 GB SSD disk</span>
+        </div>
+        <div
+          x-show="radio === 'two'"
+          class="bg-sky-300/40 text-white rounded-full w-8 h-8 flex items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+        </div>
+      </button>
+      <button
+        @click="radio = 'three'"
+        :class="radio === 'three' ? activeClass : ''"
+        class="bg-white rounded-xl p-4 cursor-pointer flex justify-between items-center shadow-lg focus:ring-4 focus:ring-sky-200"
+      >
+        <div>
+          <p class="mb-2 font-bold text-lg text-start">Startup</p>
+          <span>12GB/6 CPUs · 160 GB SSD disk</span>
+        </div>
+        <div
+          x-show="radio === 'three'"
+          class="bg-sky-300/40 text-white rounded-full w-8 h-8 flex items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>

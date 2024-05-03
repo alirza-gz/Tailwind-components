@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./build/tailwind.css" />
+    <title>Tailwind-cli</title>
+  </head>
+  <body class="flex justify-center items-center h-screen bg-purple-600">
+    <div class="bg-white max-w-lg p-3 rounded-xl w-full flex flex-col gap-y-3">
+      <!-- accordion NO.1 -->
+      <div x-data="{ tabOne: false } ">
+        <!-- header -->
+        <div
+          @click="tabOne = !tabOne"
+          class="flex justify-between items-center bg-purple-100 py-2 px-4 rounded-md cursor-pointer hover:bg-purple-200"
+        >
+          <span class="text-purple-900 font-medium"
+            >What is your refund policy?</span
+          >
+          <svg
+            :class="tabOne ? 'rotate-180' : '' "
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 transition-all duration-300 fill-violet-700"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <!-- content -->
+        <div x-show="tabOne" class="pt-3 px-3 text-gray-600">
+          If you're unhappy with your purchase for any reason, email us within
+          90 days and we'll refund you in full, no questions asked.
+        </div>
+      </div>
+      <!-- accordion NO.2 -->
+      <div x-data="{ tabTwo: false }">
+        <!-- header -->
+        <div
+          @click="tabTwo = !tabTwo"
+          class="flex justify-between items-center bg-purple-100 py-2 px-4 rounded-md cursor-pointer hover:bg-purple-200"
+        >
+          <span class="text-purple-900 font-medium"
+            >Do you offer technical support?</span
+          >
+          <svg
+            :class="tabTwo ? 'rotate-180' : '' "
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 transition-all duration-700 fill-violet-700"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <!-- content -->
+        <div x-show="tabTwo" class="pt-3 px-3 text-gray-600">No.</div>
+      </div>
+      <div x-data="{ tabThree: false }">
+        <!-- header -->
+        <div
+          @click="tabThree = !tabThree"
+          class="flex justify-between items-center bg-purple-100 py-2 px-4 rounded-md cursor-pointer hover:bg-purple-200"
+        >
+          <span class="text-purple-900 font-medium"
+            >have you had any technical support?</span
+          >
+          <svg
+            :class="tabThree ? 'rotate-180' : '' "
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 transition-all duration-700 fill-violet-700"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <!-- content -->
+        <div x-show="tabThree" class="pt-3 px-3 text-gray-600">Yes.</div>
+      </div>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>

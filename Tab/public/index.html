@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./build/tailwind.css" />
+    <title>Tab</title>
+  </head>
+  <body class="flex justify-center items-center h-screen bg-blue-500">
+    <div
+      x-data="{tabNO : 1, activeClass : 'text-blue-700 bg-slate-50 hover:bg-slate-100'}"
+      class="max-w-md w-full"
+    >
+      <!-- Tab header -->
+      <div
+        class="bg-blue-900/20 text-white flex justify-center items-center rounded-lg p-1"
+      >
+        <button
+          @click="tabNO = 1"
+          :class="tabNO === 1 ? activeClass : ''"
+          class="p-2 rounded-lg hover:bg-[rgba(255,255,255,0.21)] w-full transition-all duration-300 focus:bg-white focus:text-blue-700 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-700"
+        >
+          Recent
+        </button>
+        <button
+          @click="tabNO = 2"
+          :class="tabNO === 2 ? activeClass : ''"
+          class="p-2 rounded-lg hover:bg-[rgba(255,255,255,0.21)] w-full transition-all duration-300 focus:bg-white focus:text-blue-700 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-700"
+        >
+          Popular
+        </button>
+        <button
+          @click="tabNO = 3"
+          :class="tabNO === 3 ? activeClass : ''"
+          class="p-2 rounded-lg hover:bg-[rgba(255,255,255,0.21)] w-full transition-all duration-300 focus:bg-white focus:text-blue-700 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-700"
+        >
+          Trending
+        </button>
+      </div>
+      <!-- Tab content -->
+      <div class="bg-white rounded-xl mt-3 p-3">
+        <!-- content -1 -->
+        <div x-show="tabNO === 1">
+          <div class="p-3 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <p class="font-medium text-slate-800">
+              Does drinking coffee make you master
+            </p>
+            <span class="text-sm text-gray-500"
+              >5h ago &bull; 5 comments &bull; 2 shares</span
+            >
+          </div>
+          <div class="p-3 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <p class="font-medium text-slate-800">
+              So you've bought coffee... now what?
+            </p>
+            <span class="text-sm text-gray-500"
+              >2h ago &bull; 3 comments &bull; 2 shares</span
+            >
+          </div>
+        </div>
+        <!-- content -2 -->
+        <div x-show="tabNO === 2">
+          <div class="p-3 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <p class="font-medium text-slate-800">
+              Is tech making coffee better or worse ?
+            </p>
+            <span class="text-sm text-gray-500"
+              >Jan 7 &bull; 29 comments &bull; 16 shares</span
+            >
+          </div>
+          <div class="p-3 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <p class="font-medium text-slate-800">
+              The most innovative things happening in coffee
+            </p>
+            <span class="text-sm text-gray-500"
+              >March 19 &bull; 24 comments &bull; 12 shares</span
+            >
+          </div>
+        </div>
+        <!-- content -3 -->
+        <div x-show="tabNO === 3">
+          <div class="p-3 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <p class="font-medium text-slate-800">
+              Ask Me Anything: 10 answers to your questions about coffee
+            </p>
+            <span class="text-sm text-gray-500"
+              >2d ago &bull; 9 comments &bull; 5 shares</span
+            >
+          </div>
+          <div class="p-3 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <p class="font-medium text-slate-800">
+              The worst advice we've ever heard about coffee
+            </p>
+            <span class="text-sm text-gray-500"
+              >4d ago &bull; 1 comments &bull; 2 shares</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
